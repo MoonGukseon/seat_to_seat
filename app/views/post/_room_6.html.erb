@@ -1,0 +1,315 @@
+
+<script>
+     $(function () {
+        $('.map').maphilight({ stroke: false, fillColor: 'FFFFFFFF', fillOpacity: 0.5 });
+    });
+   
+</script>
+
+<script>
+    function selSeat(val) {
+        $.ajax({
+          method: "GET",
+          url: "/seatReview",
+          data: { seat_id: val }
+        })
+          .done(function( msg ) {
+            $("#seatReview").html(msg);
+          });
+    }
+
+</script>
+
+<button type="button" class="btn btn-default"><a href="/seatPlan/1">1층</a></button>
+<button type="button" class="btn btn-default"><a href="/seatPlan/5">2층</a></button>
+
+<center> <img class="map" src="/assets/bluesquare_3.jpg" usemap="#blue_square_3"/> </center>
+<map name="blue_square_3">
+    
+
+
+ <!-- 1열 -->
+  <area shape="rect" coords="58,196,67,205" onclick="selSeat(201)" />
+  <area shape="rect" coords="69,196,78,205" onclick="selSeat(202)" />
+  <area shape="rect" coords="80,196,89,205" onclick="selSeat(203)" />
+  <area shape="rect" coords="91,196,100,205" onclick="selSeat(204)" />
+  <area shape="rect" coords="102,196,111,205" onclick="selSeat(205)" />
+  <area shape="rect" coords="113,196,122,205" onclick="selSeat(206)" />
+  <area shape="rect" coords="124,196,133,205" onclick="selSeat(207)" />
+  <area shape="rect" coords="136,196,145,205" onclick="selSeat(208)" />
+  <area shape="rect" coords="147,196,156,205" onclick="selSeat(209)" />
+  <area shape="rect" coords="158,196,167,205" onclick="selSeat(210)" />
+  <area shape="rect" coords="169,196,178,205" onclick="selSeat(211)" />
+  <area shape="rect" coords="181,196,190,205" onclick="selSeat(212)" />
+  <area shape="rect" coords="193,196,202,205" onclick="selSeat(213)" />
+  <area shape="rect" coords="205,196,214,205" onclick="selSeat(214)" />
+  <area shape="rect" coords="217,196,226,205" onclick="selSeat(215)" />
+  <area shape="rect" coords="240,196,249,205" onclick="selSeat(216)" />
+  <area shape="rect" coords="251,196,260,205" onclick="selSeat(217)" />
+  <area shape="rect" coords="262,196,271,205" onclick="selSeat(218)" />
+  <area shape="rect" coords="273,196,282,205" onclick="selSeat(219)" />
+  <area shape="rect" coords="284,196,293,205" onclick="selSeat(220)" />
+  <area shape="rect" coords="295,196,304,205" onclick="selSeat(221)" />
+  <area shape="rect" coords="306,196,315,205" onclick="selSeat(222)" />
+  <area shape="rect" coords="317,196,326,205" onclick="selSeat(223)" />
+  <area shape="rect" coords="329,196,338,205" onclick="selSeat(224)" />
+  <area shape="rect" coords="340,196,349,205" onclick="selSeat(225)" />
+  <area shape="rect" coords="351,196,360,205" onclick="selSeat(226)" />
+  <area shape="rect" coords="362,196,371,205" onclick="selSeat(227)" />
+  <area shape="rect" coords="374,196,383,205" onclick="selSeat(228)" />
+  <area shape="rect" coords="386,196,395,205" onclick="selSeat(229)" />
+  <area shape="rect" coords="397,196,406,205" onclick="selSeat(230)" />
+  <area shape="rect" coords="409,196,418,205" onclick="selSeat(231)" />
+  <area shape="rect" coords="434,196,443,205" onclick="selSeat(232)" />
+  <area shape="rect" coords="445,196,454,205" onclick="selSeat(233)" />
+  <area shape="rect" coords="457,196,466,205" onclick="selSeat(234)" />
+  <area shape="rect" coords="469,196,478,205" onclick="selSeat(235)" />
+  <area shape="rect" coords="481,196,490,205" onclick="selSeat(236)" />
+  <area shape="rect" coords="492,196,501,205" onclick="selSeat(237)" />
+  <area shape="rect" coords="503,196,512,205" onclick="selSeat(238)" />
+  <area shape="rect" coords="514,196,523,205" onclick="selSeat(239)" />
+  <area shape="rect" coords="526,196,535,205" onclick="selSeat(240)" />
+  <area shape="rect" coords="537,196,546,205" onclick="selSeat(241)" />
+  <area shape="rect" coords="548,196,557,205" onclick="selSeat(242)" />
+  <area shape="rect" coords="559,196,568,205" onclick="selSeat(243)" />
+  <area shape="rect" coords="570,196,579,205" onclick="selSeat(244)" />
+  <area shape="rect" coords="581,196,590,205" onclick="selSeat(245)" />
+  <area shape="rect" coords="592,196,601,205" onclick="selSeat(246)" />
+
+ <!-- 2열 -->
+  <area shape="rect" coords="58,206,67,215" onclick="selSeat(247)" />
+  <area shape="rect" coords="69,206,78,215" onclick="selSeat(248)" />
+  <area shape="rect" coords="80,206,89,215" onclick="selSeat(249)" />
+  <area shape="rect" coords="91,206,100,215" onclick="selSeat(250)" />
+  <area shape="rect" coords="102,206,111,215" onclick="selSeat(251)" />
+  <area shape="rect" coords="113,206,122,215" onclick="selSeat(252)" />
+  <area shape="rect" coords="124,206,133,215" onclick="selSeat(253)" />
+  <area shape="rect" coords="136,206,145,215" onclick="selSeat(254)" />
+  <area shape="rect" coords="147,206,156,215" onclick="selSeat(255)" />
+  <area shape="rect" coords="158,206,167,215" onclick="selSeat(256)" />
+  <area shape="rect" coords="170,206,179,215" onclick="selSeat(257)" />
+  <area shape="rect" coords="181,206,190,215" onclick="selSeat(258)" />
+  <area shape="rect" coords="193,206,202,215" onclick="selSeat(259)" />
+  <area shape="rect" coords="205,206,214,215" onclick="selSeat(260)" />
+  <area shape="rect" coords="217,206,226,215" onclick="selSeat(261)" />
+  <area shape="rect" coords="240,206,249,215" onclick="selSeat(262)" />
+  <area shape="rect" coords="251,206,260,215" onclick="selSeat(263)" />
+  <area shape="rect" coords="262,206,271,215" onclick="selSeat(264)" />
+  <area shape="rect" coords="273,206,282,215" onclick="selSeat(265)" />
+  <area shape="rect" coords="284,206,293,215" onclick="selSeat(266)" />
+  <area shape="rect" coords="295,206,304,215" onclick="selSeat(267)" />
+  <area shape="rect" coords="306,206,315,215" onclick="selSeat(268)" />
+  <area shape="rect" coords="317,206,326,215" onclick="selSeat(269)" />
+  <area shape="rect" coords="329,206,338,215" onclick="selSeat(270)" />
+  <area shape="rect" coords="340,206,349,215" onclick="selSeat(271)" />
+  <area shape="rect" coords="351,206,360,215" onclick="selSeat(272)" />
+  <area shape="rect" coords="362,206,371,215" onclick="selSeat(273)" />
+  <area shape="rect" coords="374,206,383,215" onclick="selSeat(274)" />
+  <area shape="rect" coords="386,206,395,215" onclick="selSeat(275)" />
+  <area shape="rect" coords="397,206,406,215" onclick="selSeat(276)" />
+  <area shape="rect" coords="409,206,418,215" onclick="selSeat(277)" />
+  <area shape="rect" coords="434,206,443,215" onclick="selSeat(278)" />
+  <area shape="rect" coords="445,206,454,215" onclick="selSeat(279)" />
+  <area shape="rect" coords="457,206,466,215" onclick="selSeat(280)" />
+  <area shape="rect" coords="469,206,478,215" onclick="selSeat(281)" />
+  <area shape="rect" coords="481,206,490,215" onclick="selSeat(282)" />
+  <area shape="rect" coords="492,206,501,215" onclick="selSeat(283)" />
+  <area shape="rect" coords="503,206,512,215" onclick="selSeat(284)" />
+  <area shape="rect" coords="514,206,523,215" onclick="selSeat(285)" />
+  <area shape="rect" coords="526,206,535,215" onclick="selSeat(286)" />
+  <area shape="rect" coords="537,206,546,215" onclick="selSeat(287)" />
+  <area shape="rect" coords="548,206,557,215" onclick="selSeat(288)" />
+  <area shape="rect" coords="559,206,568,215" onclick="selSeat(289)" />
+  <area shape="rect" coords="570,206,579,215" onclick="selSeat(290)" />
+  <area shape="rect" coords="581,206,590,215" onclick="selSeat(291)" />
+  <area shape="rect" coords="592,206,601,215" onclick="selSeat(292)" />
+
+ <!-- 3열 -->
+  <area shape="rect" coords="80,228,89,237" onclick="selSeat(293)" />
+  <area shape="rect" coords="91,228,100,237" onclick="selSeat(294)" />
+  <area shape="rect" coords="102,228,111,237" onclick="selSeat(295)" />
+  <area shape="rect" coords="113,228,122,237" onclick="selSeat(296)" />
+  <area shape="rect" coords="125,228,134,237" onclick="selSeat(297)" />
+  <area shape="rect" coords="136,228,145,237" onclick="selSeat(298)" />
+  <area shape="rect" coords="147,228,156,237" onclick="selSeat(299)" />
+  <area shape="rect" coords="158,228,167,237" onclick="selSeat(300)" />
+  <area shape="rect" coords="169,228,178,237" onclick="selSeat()" />
+  <area shape="rect" coords="181,228,190,237" onclick="selSeat()" />
+  <area shape="rect" coords="193,228,202,237" onclick="selSeat()" />
+  <area shape="rect" coords="205,228,214,237" onclick="selSeat()" />
+  <area shape="rect" coords="217,228,226,237" onclick="selSeat()" />
+  <area shape="rect" coords="240,228,249,237" onclick="selSeat()" />
+  <area shape="rect" coords="251,228,260,237" onclick="selSeat()" />
+  <area shape="rect" coords="262,228,271,237" onclick="selSeat()" />
+  <area shape="rect" coords="273,228,282,237" onclick="selSeat()" />
+  <area shape="rect" coords="284,228,293,237" onclick="selSeat()" />
+  <area shape="rect" coords="295,228,304,237" onclick="selSeat()" />
+  <area shape="rect" coords="306,228,315,237" onclick="selSeat()" />
+  <area shape="rect" coords="318,228,327,237" onclick="selSeat()" />
+  <area shape="rect" coords="329,228,338,237" onclick="selSeat()" />
+  <area shape="rect" coords="340,228,349,237" onclick="selSeat()" />
+  <area shape="rect" coords="351,228,360,237" onclick="selSeat()" />
+  <area shape="rect" coords="363,228,372,237" onclick="selSeat()" />
+  <area shape="rect" coords="374,228,383,237" onclick="selSeat()" />
+  <area shape="rect" coords="386,228,395,237" onclick="selSeat()" />
+  <area shape="rect" coords="398,228,407,237" onclick="selSeat()" />
+  <area shape="rect" coords="409,228,418,237" onclick="selSeat()" />
+  <area shape="rect" coords="434,228,443,237" onclick="selSeat()" />
+  <area shape="rect" coords="446,228,455,237" onclick="selSeat()" />
+  <area shape="rect" coords="457,228,466,237" onclick="selSeat()" />
+  <area shape="rect" coords="469,228,478,237" onclick="selSeat()" />
+  <area shape="rect" coords="481,228,490,237" onclick="selSeat()" />
+  <area shape="rect" coords="492,228,501,237" onclick="selSeat()" />
+  <area shape="rect" coords="503,228,512,237" onclick="selSeat()" />
+  <area shape="rect" coords="514,228,523,237" onclick="selSeat()" />
+  <area shape="rect" coords="526,228,535,237" onclick="selSeat()" />
+  <area shape="rect" coords="537,228,546,237" onclick="selSeat()" />
+  <area shape="rect" coords="548,228,557,237" onclick="selSeat()" />
+  <area shape="rect" coords="559,228,568,237" onclick="selSeat()" />
+  <area shape="rect" coords="570,228,579,237" onclick="selSeat()" />
+
+ <!-- 4열 -->
+  <area shape="rect" coords="58,239,67,248" onclick="selSeat()" />
+  <area shape="rect" coords="69,239,78,248" onclick="selSeat()" />
+  <area shape="rect" coords="80,239,89,248" onclick="selSeat()" />
+  <area shape="rect" coords="91,239,100,248" onclick="selSeat()" />
+  <area shape="rect" coords="102,239,111,248" onclick="selSeat()" />
+  <area shape="rect" coords="113,239,122,248" onclick="selSeat()" />
+  <area shape="rect" coords="125,239,134,248" onclick="selSeat()" />
+  <area shape="rect" coords="136,239,145,248" onclick="selSeat()" />
+  <area shape="rect" coords="147,239,156,248" onclick="selSeat()" />
+  <area shape="rect" coords="158,239,167,248" onclick="selSeat()" />
+  <area shape="rect" coords="170,239,179,248" onclick="selSeat()" />
+  <area shape="rect" coords="181,239,190,248" onclick="selSeat()" />
+  <area shape="rect" coords="193,239,202,248" onclick="selSeat()" />
+  <area shape="rect" coords="205,239,214,248" onclick="selSeat()" />
+  <area shape="rect" coords="217,239,226,248" onclick="selSeat()" />
+  <area shape="rect" coords="240,239,249,248" onclick="selSeat()" />
+  <area shape="rect" coords="251,239,260,248" onclick="selSeat()" />
+  <area shape="rect" coords="262,239,271,248" onclick="selSeat()" />
+  <area shape="rect" coords="273,239,282,248" onclick="selSeat()" />
+  <area shape="rect" coords="284,239,293,248" onclick="selSeat()" />
+  <area shape="rect" coords="295,239,304,248" onclick="selSeat()" />
+  <area shape="rect" coords="306,239,315,248" onclick="selSeat()" />
+  <area shape="rect" coords="318,239,327,248" onclick="selSeat()" />
+  <area shape="rect" coords="329,239,338,248" onclick="selSeat()" />
+  <area shape="rect" coords="340,239,349,248" onclick="selSeat()" />
+  <area shape="rect" coords="351,239,360,248" onclick="selSeat()" />
+  <area shape="rect" coords="363,239,372,248" onclick="selSeat()" />
+  <area shape="rect" coords="374,239,383,248" onclick="selSeat()" />
+  <area shape="rect" coords="386,239,395,248" onclick="selSeat()" />
+  <area shape="rect" coords="398,239,407,248" onclick="selSeat()" />
+  <area shape="rect" coords="409,239,418,248" onclick="selSeat()" />
+  <area shape="rect" coords="434,239,443,248" onclick="selSeat()" />
+  <area shape="rect" coords="446,239,455,248" onclick="selSeat()" />
+  <area shape="rect" coords="457,239,466,248" onclick="selSeat()" />
+  <area shape="rect" coords="469,239,478,248" onclick="selSeat()" />
+  <area shape="rect" coords="481,239,490,248" onclick="selSeat()" />
+  <area shape="rect" coords="492,239,501,248" onclick="selSeat()" />
+  <area shape="rect" coords="504,239,513,248" onclick="selSeat()" />
+  <area shape="rect" coords="514,239,523,248" onclick="selSeat()" />
+  <area shape="rect" coords="526,239,535,248" onclick="selSeat()" />
+  <area shape="rect" coords="537,239,546,248" onclick="selSeat()" />
+  <area shape="rect" coords="548,239,557,248" onclick="selSeat()" />
+  <area shape="rect" coords="559,239,568,248" onclick="selSeat()" />
+  <area shape="rect" coords="570,239,579,248" onclick="selSeat()" />
+  <area shape="rect" coords="581,239,590,248" onclick="selSeat()" />
+  <area shape="rect" coords="592,239,601,248" onclick="selSeat()" />
+
+ <!-- 5열 -->
+  <area shape="rect" coords="58,250,67,259" onclick="selSeat()" />
+  <area shape="rect" coords="69,250,78,259" onclick="selSeat()" />
+  <area shape="rect" coords="80,250,89,259" onclick="selSeat()" />
+  <area shape="rect" coords="91,250,100,259" onclick="selSeat()" />
+  <area shape="rect" coords="102,250,111,259" onclick="selSeat()" />
+  <area shape="rect" coords="113,250,122,259" onclick="selSeat()" />
+  <area shape="rect" coords="125,250,134,259" onclick="selSeat()" />
+  <area shape="rect" coords="136,250,145,259" onclick="selSeat()" />
+  <area shape="rect" coords="147,250,156,259" onclick="selSeat()" />
+  <area shape="rect" coords="158,250,167,259" onclick="selSeat()" />
+  <area shape="rect" coords="170,250,179,259" onclick="selSeat()" />
+  <area shape="rect" coords="181,250,190,259" onclick="selSeat()" />
+  <area shape="rect" coords="193,250,202,259" onclick="selSeat()" />
+  <area shape="rect" coords="205,250,214,259" onclick="selSeat()" />
+  <area shape="rect" coords="217,250,226,259" onclick="selSeat()" />
+  <area shape="rect" coords="240,250,249,259" onclick="selSeat()" />
+  <area shape="rect" coords="251,250,260,259" onclick="selSeat()" />
+  <area shape="rect" coords="262,250,271,259" onclick="selSeat()" />
+  <area shape="rect" coords="273,250,282,259" onclick="selSeat()" />
+  <area shape="rect" coords="284,250,293,259" onclick="selSeat()" />
+  <area shape="rect" coords="295,250,304,259" onclick="selSeat()" />
+  <area shape="rect" coords="306,250,315,259" onclick="selSeat()" />
+  <area shape="rect" coords="318,250,327,259" onclick="selSeat()" />
+  <area shape="rect" coords="329,250,338,259" onclick="selSeat()" />
+  <area shape="rect" coords="340,250,349,259" onclick="selSeat()" />
+  <area shape="rect" coords="351,250,360,259" onclick="selSeat()" />
+  <area shape="rect" coords="363,250,372,259" onclick="selSeat()" />
+  <area shape="rect" coords="374,250,383,259" onclick="selSeat()" />
+  <area shape="rect" coords="386,250,395,259" onclick="selSeat()" />
+  <area shape="rect" coords="398,250,407,259" onclick="selSeat()" />
+  <area shape="rect" coords="410,250,419,259" onclick="selSeat()" />
+  <area shape="rect" coords="434,250,443,259" onclick="selSeat()" />
+  <area shape="rect" coords="446,250,455,259" onclick="selSeat()" />
+  <area shape="rect" coords="457,250,466,259" onclick="selSeat()" />
+  <area shape="rect" coords="469,250,478,259" onclick="selSeat()" />
+  <area shape="rect" coords="481,250,490,259" onclick="selSeat()" />
+  <area shape="rect" coords="492,250,501,259" onclick="selSeat()" />
+  <area shape="rect" coords="503,250,512,259" onclick="selSeat()" />
+  <area shape="rect" coords="514,250,523,259" onclick="selSeat()" />
+  <area shape="rect" coords="526,250,535,259" onclick="selSeat()" />
+  <area shape="rect" coords="537,250,546,259" onclick="selSeat()" />
+  <area shape="rect" coords="548,250,557,259" onclick="selSeat()" />
+  <area shape="rect" coords="559,250,568,259" onclick="selSeat()" />
+  <area shape="rect" coords="570,250,579,259" onclick="selSeat()" />
+  <area shape="rect" coords="581,250,590,259" onclick="selSeat()" />
+  <area shape="rect" coords="592,250,601,259" onclick="selSeat()" />
+
+ <!-- 6열 -->
+  <area shape="rect" coords="47,260,56,269" onclick="selSeat()" />
+  <area shape="rect" coords="58,260,67,269" onclick="selSeat()" />
+  <area shape="rect" coords="69,260,78,269" onclick="selSeat()" />
+  <area shape="rect" coords="80,260,89,269" onclick="selSeat()" />
+  <area shape="rect" coords="91,260,100,269" onclick="selSeat()" />
+  <area shape="rect" coords="102,260,111,269" onclick="selSeat()" />
+  <area shape="rect" coords="114,260,123,269" onclick="selSeat()" />
+  <area shape="rect" coords="125,260,134,269" onclick="selSeat()" />
+  <area shape="rect" coords="136,260,145,269" onclick="selSeat()" />
+  <area shape="rect" coords="147,260,156,269" onclick="selSeat()" />
+  <area shape="rect" coords="158,260,167,269" onclick="selSeat()" />
+  <area shape="rect" coords="170,260,179,269" onclick="selSeat()" />
+  <area shape="rect" coords="181,260,190,269" onclick="selSeat()" />
+  <area shape="rect" coords="193,260,202,269" onclick="selSeat()" />
+  <area shape="rect" coords="205,260,214,269" onclick="selSeat()" />
+  <area shape="rect" coords="217,260,226,269" onclick="selSeat()" />
+  <area shape="rect" coords="240,260,249,269" onclick="selSeat()" />
+  <area shape="rect" coords="251,260,260,269" onclick="selSeat()" />
+  <area shape="rect" coords="262,260,271,269" onclick="selSeat()" />
+  <area shape="rect" coords="273,260,282,269" onclick="selSeat()" />
+  <area shape="rect" coords="284,260,293,269" onclick="selSeat()" />
+  <area shape="rect" coords="295,260,304,269" onclick="selSeat()" />
+  <area shape="rect" coords="306,260,315,269" onclick="selSeat()" />
+  <area shape="rect" coords="340,260,349,269" onclick="selSeat()" />
+  <area shape="rect" coords="351,260,360,269" onclick="selSeat()" />
+  <area shape="rect" coords="363,260,372,269" onclick="selSeat()" />
+  <area shape="rect" coords="374,260,383,269" onclick="selSeat()" />
+  <area shape="rect" coords="386,260,395,269" onclick="selSeat()" />
+  <area shape="rect" coords="398,260,407,269" onclick="selSeat()" />
+  <area shape="rect" coords="410,260,419,269" onclick="selSeat()" />
+  <area shape="rect" coords="434,260,443,269" onclick="selSeat()" />
+  <area shape="rect" coords="446,260,455,269" onclick="selSeat()" />
+  <area shape="rect" coords="457,260,466,269" onclick="selSeat()" />
+  <area shape="rect" coords="469,260,478,269" onclick="selSeat()" />
+  <area shape="rect" coords="481,260,490,269" onclick="selSeat()" />
+  <area shape="rect" coords="492,260,501,269" onclick="selSeat()" />
+  <area shape="rect" coords="503,260,512,269" onclick="selSeat()" />
+  <area shape="rect" coords="514,260,523,269" onclick="selSeat()" />
+  <area shape="rect" coords="526,260,535,269" onclick="selSeat()" />
+  <area shape="rect" coords="537,260,546,269" onclick="selSeat()" />
+  <area shape="rect" coords="548,260,557,269" onclick="selSeat()" />
+  <area shape="rect" coords="559,260,568,269" onclick="selSeat()" />
+  <area shape="rect" coords="570,260,579,269" onclick="selSeat()" />
+  <area shape="rect" coords="581,260,590,269" onclick="selSeat()" />
+  <area shape="rect" coords="592,260,601,269" onclick="selSeat()" />
+  <area shape="rect" coords="603,260,612,269" onclick="selSeat()" />
+
+</map>

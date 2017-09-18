@@ -1,0 +1,108 @@
+.caption{
+    height: 200px;
+
+}
+
+.caption p{
+    padding: 4% 0% 4% 0px;
+}
+
+p{
+    text-align: justify;
+}
+
+.thumbnail{
+    width: 300px;
+    height: 260px;
+    border: none;
+}
+
+.main{
+    margin-top: 5%;
+    
+}
+
+.category{
+    margin-right: 1%;
+
+}
+
+.categoryTab{
+    margin-right: 3%;
+}
+
+.btn-group .categoryTab > a{
+ text-decoration: blink; 
+}
+
+.subNav {
+	position: relative;
+	 width: 90%;
+    height: auto;
+	padding: 15px 0;
+	/*background: #ddd;*/
+	/*box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.subNav li{
+    display: inline;
+}
+.subNav a {
+		display: block;
+		padding: 5px 0;
+		text-decoration: none;
+		text-indent: 20px;
+		color: #3d078a;
+}
+		.subNav a:hover {
+			background: radial-gradient(circle, rgba(#fff, 0.1), rgba(#fff, 0.03));
+		}
+		.current {
+			/*position: relative;*/
+			color: #fff;
+			font-weight: bold;
+			background: radial-gradient(circle, rgba(#fff, 0.3), rgba(#fff, 0.1));
+		}
+			.current:after {
+				content: '';
+				position: absolute;
+				top: 50%; right: 0;
+				transform: translate(50%, -50%) rotate(45deg);
+				transform-origin: center;
+				width: 15px; height: 15px;
+				background: #fff;
+			}
+	
+
+main {
+	position: relative;
+	left: 150px;
+	width: calc(100% - 200px);
+	padding-top: 22%;
+}
+ .mainrow{
+    margin-top: 2%;
+}
+main section {
+	padding: 2% 20px 0px 0px
+}
+
+.subNav{
+    color: #000;
+    /*margin-bottom: 15%;*/
+}
+
+.perfofilter{
+    padding: 1%;
+    width: 120px;
+    border: 0px;
+    margin-bottom: 2%;
+    margin-right: 1%;
+}
+
+.filterBox{
+    border: 0px;
+    padding: 0% 0% 2% 0%;;
+    padding-top: 2%;
+}
+

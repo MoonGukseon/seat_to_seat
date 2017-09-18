@@ -1,0 +1,122 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="color: #3d078a;">
+	<div class="container">
+	  <div class="navbar-header">
+	  	<a class="navbar-brand page-scroll" href="/" style="color: #3d078a; font-family: 'Julius Sans One', sans-serif;">Seat To Seat</a>
+	  </div>
+	  
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	   	<ul class="nav navbar-nav navbar-right" id="NavTab">
+	   		<li> <a class="page-scroll" href="/about">About Us</a></li>
+	   		
+	        <li class="drop-down"> <a class="page-scroll" href="/category">Review</a>
+	        	<div class="mega-menu"> <!--드롭다운-->
+				   <span class="categories-list" >
+					<ul >
+						<li><a class="drop-list" href="/category">공연</a></li>
+						<li style="margin-top: 30px; ">
+							<a class="drop-list" href="/categorySport">스포츠</a>
+						</li>
+						<li style="margin-top: 60px;"><a class="drop-list" href="/categoryTheater">극장</a></li>
+					</ul>
+					</span>
+				</div>
+	        </li>
+	        <li> <a class="page-scroll" href="/create">Add Review</a></li>
+	        
+	        <% if user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        	<% else %>
+            <li><%= link_to 'Log in', new_user_session_path %></li>
+        	<% end %>
+	    </ul>
+    </div>
+
+    </div>
+</nav>
+
+<header class="subNav container" style="padding-top: 80px;" id="test">
+   <h2 class="page-header">스포츠</h2>
+  <div class="filterBox">
+  <ul>
+    <li>
+     <select class="form-control" style="width: 200px; display:inline; margin-right: 1%;" id="select1" onChange="getState1(this.value);">
+        <option value='all' name = 'region'>지역 전체</option>
+        <% @place.select("DISTINCT(region)").each do |e| %>
+            <option value='all' name = 'region'><%= e.region %></option></option>
+        <% end %>
+    </select>
+    </li>
+    <li>
+    <select class="form-control " style="width: 200px; display:inline;" id="select2" onChange="getState2(this.value);">
+         <option value='all'>전체 선택</option>
+         <option value='야구장'>야구장</option>
+         <option value='축구장'>축구장</option>
+         <option value='농구장'>농구장</option>
+    </select>
+    </li>
+  </ul>
+</div>
+</header>
+
+<div class="container">
+    <div id="r_sport">
+            <!-- 리뷰 리스트 -->
+    </div>
+</div>
+
+<script>
+    $( document ).ready(function() {
+        getState1('all');
+    });
+
+    function getState1(val) {
+        $.ajax({
+          method: "GET",
+          url: "/r_sport",
+          data: { region: val }
+        })
+          .done(function( msg ) {
+            $("#r_sport").html(msg);
+          });
+    }
+    
+    
+</script>
+<script>
+     function getState2(val) {
+
+        var elmnVal = $( "#select1 option:selected" ).val();
+        var regions;
+        
+        if(elmnVal == null) {
+            regions = 'all';
+        }else if(elmnVal != null) {
+            regions = elmnVal;
+        }
+
+        $.ajax({
+          method: "GET",
+          url: "/r_sport",
+          data: { region: regions, type2: val  }
+        })
+          .done(function( msg ) {
+            $("#r_sport").html(msg);
+          });
+    }
+    
+</script>
+
+<!--드롭다운 js-->
+<script>
+    $(document).ready(function() {
+			
+			//drop down menu	
+					$(".drop-down").hover(function() {
+						$('.mega-menu').addClass('display-on');
+					});
+					$(".drop-down").mouseleave(function() {
+						$('.mega-menu').removeClass('display-on');
+					});
+			
+			});
+</script>

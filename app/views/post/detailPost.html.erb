@@ -1,0 +1,16 @@
+<h5>상세후기</h5>
+<% @postFind.each do |p| %>
+    <div>
+    좌석:
+   
+    <br>
+    한줄평:<%= p.post_title %><br>
+    관람일:<%= p.watch_date %><br>
+    내용:<%= p.post_content %><br>
+    <%# if !p.image.blank? %>
+    사진:<img src="<%= image_tag p.image.url %>" style="width:200; height:200"><br>
+    <%= image_tag p.image %>
+    
+    <%# end %>
+    </div>
+<% end %>

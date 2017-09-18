@@ -1,0 +1,133 @@
+<body style="overflow: hidden;">
+	
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background: none; ">
+	<div class="container">
+	  <div class="navbar-header">
+	  	<a class="navbar-brand page-scroll" href="/" style="color: #3d078a; font-family: 'Julius Sans One', sans-serif;">Seat To Seat</a>
+	  </div>
+	  
+	   	<ul class="nav navbar-nav navbar-right" id="NavTab">
+	   		<li> <a class="page-scroll" href="/about">About Us</a></li>
+	   		
+	        <li class="drop-down"> <a class="page-scroll" href="#">Review</a>
+	        	<div class="mega-menu"> <!--드롭다운-->
+				   <span class="categories-list" >
+					<ul >
+						<li ><a class="drop-list" href="/category" >공연</a></li>
+						<li style="margin-top: 30px; ">
+							<a class="drop-list" href="/categorySport">스포츠</a>
+						</li>
+						<li style="margin-top: 60px;"><a class="drop-list" href="/categoryTheater">극장</a></li>
+					</ul>
+					</span>
+				</div>
+	        </li>
+	        <li> <a class="page-scroll" href="/create">Add Review</a></li>
+	        
+	        <% if user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        	<% else %>
+            <li><%= link_to 'Log in', new_user_session_path %></li>
+        	<% end %>
+	    </ul>
+	    
+	</div>
+</nav>
+					 	
+<div class="header">
+<div class="container">
+<div class="header-content">
+<div class="header-content-inner ">
+
+<!--메인 인트로		-->
+	<section class="mainsection">
+	  <!--왼쪽 버블-->
+	  <div class="pserson_bubble slidingVertical_left" id="person_bubble"><div class="effect">
+		<img class="person" src="https://s13.postimg.org/ih41k9tqr/img1.jpg" alt="" />
+	  	<p class="name">User name</p>
+	  	<div class="from-me" ><p id="leftBubble">'<%= @postArray[0] %>'</p></div>
+	  </div></div>
+	  
+	  <!--Seat To Seat-->
+	  <div class="clear mainText">
+	  	 <h1 class="title" style = "font-family: 'Julius Sans One', sans-serif;"> seat to seat </h1>
+	  	 <h3 class="subtitle"> 내가 원하는 좌석 정보를 한눈에! </h3>
+	  </div>
+	 
+	 <!--오른쪽 버블-->
+	 <div class="them_bubble slidingVertical_right" id="them_bubble"><div class="effect">
+		<img class="person" src="https://s13.postimg.org/ih41k9tqr/img1.jpg" alt="" />
+			<p class="name">User name</p>
+	 		<div class="from-them"><p id="rightBubble">'<%= @postArray[1] %>'</p></div>
+	 </div></div>
+	<div class="clear"></div>
+</section>
+<section class = "main-icon">
+	<center>
+		<div class="row">
+			<div class="col-md-4">
+				<a class="ex-01" href="/category" style="text-decoration: none;">공연</a>		
+			</div>
+			<div class="col-md-4">
+				<a class="ex-01" href="/categorySport" style="text-decoration: none;">스포츠</a>		
+			</div>
+			<div class="col-md-4">
+				<a class="ex-01" href="/categoryTheater" style="text-decoration: none;">영화</a>		
+			</div>
+		</div>
+	</center>
+</section>
+</div>
+</div>
+</div>
+</div
+
+<!--드롭다운 js-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+<script>
+    $(document).ready(function() {
+			
+			//drop down menu	
+					$(".drop-down").hover(function() {
+						$('.mega-menu').addClass('display-on');
+					});
+					$(".drop-down").mouseleave(function() {
+						$('.mega-menu').removeClass('display-on');
+					});
+			
+			});
+</script>
+
+<!--말풍선 내용 바꾸기-->
+<script>
+	var myVar = setInterval(bubble, 3000);
+    
+    var title = [];
+    title[0] = '<%= @postArray[0] %>';
+    title[1] = '<%= @postArray[1] %>';
+    title[2] = '<%= @postArray[2] %>';
+    title[3] = '<%= @postArray[3] %>';
+    title[4] = '<%= @postArray[4] %>';
+    title[5] = '<%= @postArray[5] %>';
+    title[6] = '<%= @postArray[6] %>';
+    title[7] = '<%= @postArray[7] %>';
+    title[8] = '<%= @postArray[8] %>';
+    title[9] = '<%= @postArray[9] %>';
+    title[10] = '<%= @postArray[10] %>';
+    title[11] = '<%= @postArray[11] %>';
+    title[12] = '<%= @postArray[12] %>';
+    title[13] = '<%= @postArray[13] %>';
+    title[14] = '<%= @postArray[14] %>';
+    
+    function bubble() {
+        var d = new Date();
+        var s = d.getSeconds();
+       document.getElementById("leftBubble").innerHTML = title[Math.floor(Math.random() * title.length)];
+       document.getElementById("rightBubble").innerHTML = title[Math.floor(Math.random() * title.length)];
+    }
+</script>
+</script>
+
+
+</body>

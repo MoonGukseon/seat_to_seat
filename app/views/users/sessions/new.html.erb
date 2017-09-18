@@ -1,0 +1,53 @@
+<body style="background-color: #fff; color: #3d078a; overflow:hidden;">
+<div class="logincontainer">
+  <div class="login">
+  	<h1 class="login-heading deviceTitle">Seat to Seat</h1>
+    <!--<h3 class="login-heading deviceTitle"> 시작하기</h3>-->
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <form action="#" method="post">
+      	
+    <!--E-mail-->
+    <input id="user_email" type="email" name="user[email]" placeholder="E-mail" required="required" class="login_input" />
+    <!--<input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email">-->
+        
+    <!--Password-->
+    <input id="user_password" type="password" name="user[password]" placeholder="Password" required="required" class="login_input" />
+     <!--<input autocomplete="off" type="password" name="user[password]" id="user_password">   -->
+    
+    <!--Remember_Me-->
+    <div style="padding-left: 20px;"> <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
+    <!--<label class="boolean optional checkbox" for="user_remember_me"><input class="boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">로그인 유지하기</label>-->
+    
+    <input type="submit" name="commit" value="LOGIN" class="login_btn login_btn--right" >
+        
+    <a class="login_link" href="/users/sign_up">회원가입</a>
+    <a class="login_link" href="/users/password/new">비밀번호 찾기</a>
+ 
+	</form>
+	<% end %>
+  </div>
+</div>
+</body>
+
+
+<!--<%#= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
+<!--<div class="w3-main">-->
+	<!-- Main -->
+<!--	<div class="about-bottom main-agile book-form">-->
+<!--		<div class="alert-close"> </div>-->
+<!--		<h2 class="tittle">Seat To Seat</h2>-->
+<!--		<form action="#" method="post">-->
+<!--			<div class="form-date-w3-agileits">-->
+<!--				<label> E-Mail </label>-->
+<!--      			  <%#= f.email_field :email, autofocus: true %>-->
+<!--				<label> Password </label>-->
+<!--				<%#= f.password_field :password, autocomplete: "off" %>-->
+<!--				 <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>-->
+<!--			</div>-->
+<!--			<div class="sub-main-w3">-->
+<!--				  <%#= f.button :submit, "LOGIN" %>-->
+<!--			</div>-->
+<!--      <%#= render "users/shared/links" %>-->
+<!--		</form>-->
+<!--  </div>-->
+<!--<%# end %>-->

@@ -1,0 +1,22 @@
+
+
+<body style="background-color: #fff; color: #3d078a; overflow:hidden;">
+<div class="logincontainer">
+  <div class="login">
+  	<!--<h1 class="login-heading deviceTitle">Seat to Seat</h1>-->
+    <h1 class="login-heading deviceTitle">비밀번호 찾기</h1>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
+   
+    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'E-mail', input_html: { class: 'login_input'}  %>
+
+    <%#= f.button :submit, "비밀번호 재설정" %>
+    <input type="submit" name="commit" value="비밀번호 재설정" class="login_btn login_btn--right" >
+      
+    <a class="login_link" href="/users/sign_in">로그인</a>
+    <a class="login_link" href="/users/sign_up">회원 가입</a>
+    
+    </div>
+<% end %>
+</div>
+</div>

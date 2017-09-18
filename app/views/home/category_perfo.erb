@@ -1,0 +1,163 @@
+
+
+<p><%= @perfo_all %></p> 
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="color: #3d078a;">
+	<div class="container">
+	  <div class="navbar-header">
+	  	<a class="navbar-brand page-scroll" href="/"style="color: #3d078a; font-family: 'Julius Sans One', sans-serif;">Seat To Seat</a>
+	  </div>
+	  
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	   	<ul class="nav navbar-nav navbar-right" id="NavTab">
+	   		<li> <a class="page-scroll" href="/about">About Us</a></li>
+	   		
+	        <li class="drop-down"> <a class="page-scroll" href="/category">Review</a>
+	        	<div class="mega-menu"> <!--드롭다운-->
+				   <span class="categories-list" >
+					<ul >
+						<li><a class="drop-list" href="/category">공연</a></li>
+						<li style="margin-top: 30px; ">
+							<a class="drop-list" href="/categorySport">스포츠</a>
+						</li>
+						<li style="margin-top: 60px;"><a class="drop-list" href="/categoryTheater">극장</a></li>
+					</ul>
+					</span>
+				</div>
+	        </li>
+	        <li> <a class="page-scroll" href="/create">Add Review</a></li>
+	        
+	        <% if user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        	<% else %>
+            <li><%= link_to 'Log in', new_user_session_path %></li>
+        	<% end %>
+	    </ul>
+    </div>
+</nav>
+
+<header class="subNav container" style="padding-top: 80px;" id="test">
+   <h2 class="page-header">공연</h2>
+  <div class="filterBox">
+   
+  
+  <ul style="margin-bottom: 20px;">
+      
+  	<li class="subNav_li">
+  			<button class="placebtn" onclick="getPlaceRegion('all')" value="1">장소별로 보기</button>
+  	</li>
+  	<li class="subNav_li">
+  				<button class="placebtn" onclick="getPerfoRegion('all')">작품별로 보기</button>
+  	</li>
+  </ul>
+  
+  <ul>
+    <li>
+     <select class="form-control" style="width: 200px; display:inline; margin-right: 1%;" id="selectRegion" onChange="perforFilter();">
+        <option value='all' name = 'region'>지역 전체</option>
+        <% @place.select("DISTINCT(region)").each do |e| %>
+            <option value='all' name = 'region'><%= e.region %></option></option>
+        <% end %>
+    </select>
+    </li>
+  </ul>
+</div>
+</header>
+
+<div class="container">
+    <div id="list"></div>
+<!-- 리뷰 리스트 -->
+</div>
+
+
+
+<!--<header>-->
+<!--<div class="container" style="margin-top:150px;">-->
+<!--	<div class="row">-->
+<!--        <div class="row col-md-6" style="justify-content: space-around;">-->
+<!--     		<div class="row">-->
+<!--        	    <a class="" onclick = "getState('all')">장소별로 보기</a>-->
+<!--    			<a calss=""onclick = 'seePerfo()' >작품별로 보기</a>-->
+<!--            </div>-->
+<!--     		<select class="form-control col-md-2" style="width: 120px; display:inline; margin-right: 3%;" id="select" onChange="getState(this.value);" >-->
+<!--                <option value='all' name = 'region'>지역 전체</option>-->
+<!--                <option value="서울">서울</option>-->
+<!--            </select>-->
+<!--            <select class="form-control col-md-2" style="width: 120px; display:inline; margin-right: 3%;" id="select" >-->
+<!--                <option value=''>1</option>-->
+<!--                <option value=''>2</option>-->
+<!--                <option value=''>3</option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--    <div>-->
+<!--</div>-->
+            
+            
+<!--  </div></div>-->
+<!--</header>-->
+
+
+    <!--<div class="container">-->
+        
+    <!--    <h1><%#= @plaefilter %></h1>-->
+    <!--    <div id="r_perfo">-->
+            <!-- 리뷰 리스트 -->
+    <!--    </div>-->
+        
+    <!--</div>-->
+
+
+<script>
+    $( document ).ready(function() {
+        getPlaceRegion('all');
+    });
+
+    function perforFilter(){
+        var placeOrPerfo = $("#placeOrPerfo").val();
+        var region = $("#selectRegion").val();
+        if(placeOrPerfo == "r") {
+            getPlaceRegion(region);
+        } else if(placeOrPerfo == "p"){
+            getPerfoRegion(region);
+        }
+    }
+
+    function getPlaceRegion(val) {
+        
+        $.ajax({
+          method: "GET",
+          url: "/r_perfo",
+          data: { region: val }
+        })
+          .done(function( msg ) {
+            $("#list").html(msg);
+          });
+    }
+    
+    function getPerfoRegion(val){
+    	   
+        $.ajax({
+          method: "GET",
+          url: "/p_perfo",
+          data: { region: val }
+        })
+          .done(function( msg ) {
+            $("#list").html(msg);
+          });
+          
+    }
+</script>
+
+<script>
+    $(document).ready(function() {
+			
+			//drop down menu	
+					$(".drop-down").hover(function() {
+						$('.mega-menu').addClass('display-on');
+					});
+					$(".drop-down").mouseleave(function() {
+						$('.mega-menu').removeClass('display-on');
+					});
+			
+			});
+</script>
